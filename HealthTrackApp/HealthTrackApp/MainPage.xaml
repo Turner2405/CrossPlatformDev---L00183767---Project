@@ -5,30 +5,30 @@
 
     <ScrollView>
         <VerticalStackLayout
-            Padding="30,0"
-            Spacing="25">
+            Padding="20,0"
+            Spacing="18">
            
-
-            <Label
-                Text="HealthTrack"
-                Style="{StaticResource Headline}"
-                SemanticProperties.HeadingLevel="Level1" />
-
-            <Label
-                Text=""
-                Style="{StaticResource SubHeadline}"
-                SemanticProperties.HeadingLevel="Level2"
-                SemanticProperties.Description="Welcome to dot net Multi platform App U I" />
-
-            <Button
-                x:Name="RegisterBtn"
-                Text="Register" 
-                HorizontalOptions="Center" />
-            
-            <Button
-                x:Name="LoginBtn"
-                Text="Login " 
-                HorizontalOptions="Center" />
+           <!-- Heading Section -->
+            <Grid ColumnDefinitions="Auto, *">
+                <VerticalStackLayout Spacing="3">
+                    <Label
+                    Text="HealthTrack"
+                    FontSize="28"
+                    FontAttributes="Bold"
+                    TextColor="{StaticResource PrimaryDark}"
+                    Style="{StaticResource Headline}"
+                    SemanticProperties.HeadingLevel="Level1" />
+                </VerticalStackLayout>
+                <Button Grid.Column="1"
+                        Text="Profile"
+                        BackgroundColor="{StaticResource LightTeal}"
+                        TextColor="{StaticResource PrimaryDark}"
+                        CornerRadius="10">
+                    
+                    
+                </Button>
+            </Grid>
+            <!-- Welcome Message-->
         </VerticalStackLayout>
     </ScrollView>
 

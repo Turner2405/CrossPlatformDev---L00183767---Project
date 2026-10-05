@@ -4,31 +4,25 @@
              x:Class="HealthTrackApp.MainPage">
 
     <ScrollView>
-        <VerticalStackLayout
-            Padding="30,0"
-            Spacing="25">
+       
            
-
-            <Label
-                Text="HealthTrack"
-                Style="{StaticResource Headline}"
-                SemanticProperties.HeadingLevel="Level1" />
-
-            <Label
-                Text=""
-                Style="{StaticResource SubHeadline}"
-                SemanticProperties.HeadingLevel="Level2"
-                SemanticProperties.Description="Welcome to dot net Multi platform App U I" />
-
-            <Button
-                x:Name="RegisterBtn"
-                Text="Register" 
-                HorizontalOptions="Center" />
+        <VerticalStackLayout
+            Padding="10"
+            Spacing="40"
+            VerticalOptions="Center">
             
-            <Button
-                x:Name="LoginBtn"
-                Text="Login " 
-                HorizontalOptions="Center" />
+            
+
+            <Label
+                Text="Welcome to Health Track"
+                TextColor="Black"
+                VerticalOptions="Center"
+                HorizontalOptions="Center"/>
+
+            <Button x:Name="btnNavigateToNext"
+                    Text="Navigate to next page"
+                    HorizontalOptions="Center"/>
+
         </VerticalStackLayout>
     </ScrollView>
 

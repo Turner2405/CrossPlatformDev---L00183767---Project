@@ -1,8 +1,8 @@
 ﻿namespace HealthTrackApp
 {
-    public partial class AppShell : Shell
+    public partial class RootPage : Shell
     {
-        public AppShell()
+        public RootPage()
         {
             InitializeComponent();
         }

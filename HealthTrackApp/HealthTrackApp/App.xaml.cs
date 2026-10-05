@@ -8,12 +8,13 @@ namespace HealthTrackApp
         {
             InitializeComponent();
 
-           
+           //Create a new navigation page
+           MainPage = new NavigationPage(new MainPage());
         }
 
-        protected override Window CreateWindow(IActivationState? activationState)
-        {
-            return new Window(new AppShell());
-        }
+        //protected override Window CreateWindow(IActivationState? activationState)
+        //{
+        //    return new Window(new MainPage());
+        //}
     }
 }

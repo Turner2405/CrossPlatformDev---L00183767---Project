@@ -1,56 +1,36 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="HealthTrackApp.MainPage"
+             x:Class="HealthTrackApp.Pages.DashBoard"
              BackgroundColor="White">
 
-
-
-    <Grid RowDefinitions="*,auto">
+      
+        <Grid RowDefinitions="*,auto">
         <ScrollView>
         
             <VerticalStackLayout
             Padding="10,0"
             Spacing="18">
-                <!-- Heading Section -->
-                <Border StrokeShape="RoundRectangle 6"
-                        BackgroundColor="{StaticResource PrimaryDark }">
-                    <Grid ColumnDefinitions="*,Auto,Auto" ColumnSpacing="10" Padding="15" BackgroundColor="{StaticResource PrimaryDark}" >
-
-                  <Label Text="HealthTrack"
-                         FontSize="28"
-                         FontAttributes="Bold"
-                         VerticalOptions="Center"
-                         TextColor="White"
-                         />
-                  <!--Profile Button-->
-                  <Button Grid.Column="1"
-                          ImageSource="profile.svg"
-                          Text="Profile"
-                          MaximumHeightRequest="60"
-                          MaximumWidthRequest="150"
-                          Background="{StaticResource Secondary}"
-                          TextColor="{StaticResource PrimaryDark}"
-                          CornerRadius="20"/>
-                </Grid>
-                </Border>
+                
                 <!--Daily Report title-->
-                <Grid ColumnDefinitions="*" RowDefinitions="Auto,auto" RowSpacing="4" ColumnSpacing="10" Padding="15">
+                <Grid ColumnDefinitions="*,*" RowDefinitions="*,*,*,*,*" RowSpacing="10" ColumnSpacing="10" Padding="15">
                     <Label 
-                        Grid.Row="0" 
+                        Grid.Row="0"
+                        
                         FontAttributes="Bold" 
                         TextColor="{StaticResource PrimaryDark}" 
-                        FontSize="20">Good Morning Ryan!</Label>
+                        FontSize="18"
+                        >Good Morning Ryan!</Label>
                     <Label 
                         Grid.Row="1" 
                         FontAttributes="Bold" 
                         TextColor="{StaticResource PrimaryDark}" 
                         FontSize="14">Here is your daily report.</Label>
-                </Grid>
+                
                <!--Report Squares for steps,calories,sleep,weight-->
-                <Grid ColumnDefinitions="*,*" RowDefinitions="Auto,auto" RowSpacing="12" ColumnSpacing="15" Padding="20">
+       
                         <!--Steps-->
-                        <Border Grid.Row="0" Grid.Column="0"
+                        <Border Grid.Row="3" Grid.Column="0"
                         Padding="14"
                         BackgroundColor="{StaticResource LightTeal}"
                         Stroke="{StaticResource BorderColor}"
@@ -103,7 +83,7 @@
                     </Border>
 
                      <!--Calories-->
-                    <Border Grid.Row="0" Grid.Column="1"
+                    <Border Grid.Row="3" Grid.Column="1"
                             Padding="14"
                             BackgroundColor="{StaticResource LightTeal}"
                             Stroke="{StaticResource BorderColor}"
@@ -140,7 +120,7 @@
                         </Grid>
                     </Border>
                     <!--Sleep-->
-                    <Border Grid.Row="1" Grid.Column="0"
+                    <Border Grid.Row="4" Grid.Column="0"
                             Padding="14"
                             BackgroundColor="{StaticResource LightTeal}"
                             Stroke="{StaticResource BorderColor}"
@@ -177,7 +157,7 @@
                         </Grid>
                     </Border>
                     <!--Weight-->
-                    <Border Grid.Row="1" Grid.Column="1"
+                    <Border Grid.Row="4" Grid.Column="1"
                             Padding="14"
                             BackgroundColor="{StaticResource LightTeal}"
                             Stroke="{StaticResource BorderColor}"
@@ -231,7 +211,7 @@
                 </Grid>
                 
                     <Grid ColumnDefinitions="*,auto, auto" RowDefinitions="auto,auto">
-                    <HorizontalStackLayout Padding="12" Spacing="10">
+                    <HorizontalStackLayout Padding="10" Spacing="10">
                         <!--Log Activity-->
                         <Border  StrokeThickness="0"  StrokeShape="RoundRectangle 18" Shadow="grey 0 0" >
                             <Button Grid.Column="0"
@@ -244,7 +224,7 @@
                             <Button Grid.Column="1"
                                 Text="Log Measurement"
                                 MaximumHeightRequest="50"
-                                MaximumWidthRequest="140"/>
+                                MaximumWidthRequest="150"/>
                         </Border>
                         <!--Log Sleep-->
                         <Border  StrokeThickness="0" StrokeShape="RoundRectangle 18" Shadow="grey 0 0">
@@ -302,82 +282,13 @@
                                    FontSize="13"
                                    TextColor="{StaticResource SecondaryDarkText}"/>
                             </VerticalStackLayout>
-
-                           
                         </Grid>
 
                     </VerticalStackLayout>
                 </Border>
-
-
-
-
-
-
             </VerticalStackLayout>
         </ScrollView>
         
-        <!-- Footer Section -->
-        <Grid
-            Grid.Row="1"
-            ColumnDefinitions="*,*,*,*"
-            Padding="10,12"
-            BackgroundColor="{StaticResource Secondary}"
-            ColumnSpacing="5">
-            <VerticalStackLayout  Grid.Column="0" HorizontalOptions="Center">
-                <!--Home Button--> 
-                <ImageButton
-                Source="house.svg"
-                BackgroundColor="{StaticResource Secondary}"
-                MaximumWidthRequest="30"
-                HorizontalOptions="Center"
-                Aspect="AspectFit" 
-                CornerRadius="15"/>
-
-                <Label Text="Home"
-                        TextColor="{StaticResource PrimaryDarkText}"/>
-            </VerticalStackLayout>
-            <VerticalStackLayout  Grid.Column="1" HorizontalOptions="Center">
-                <!--Statistics Button-->
-                <ImageButton
-                Source="stats.svg"
-                BackgroundColor="{StaticResource Secondary}"
-                MaximumWidthRequest="30"
-                HorizontalOptions="Center"
-                Aspect="AspectFit" 
-                CornerRadius="15"/>
-
-                <Label Text="Statistics"
-                        TextColor="{StaticResource PrimaryDarkText}"
-                        />
-            </VerticalStackLayout>
-            <VerticalStackLayout  Grid.Column="2" HorizontalOptions="Center">
-                <!--Goals Button-->
-                <ImageButton
-                Source="goals.svg"
-                BackgroundColor="{StaticResource Secondary}"
-                MaximumWidthRequest="30"
-                HorizontalOptions="Center"
-                Aspect="AspectFit" 
-                CornerRadius="15"/>
-
-                <Label Text="Goals"
-                        TextColor="{StaticResource PrimaryDarkText}"/>
-            </VerticalStackLayout>
-            <VerticalStackLayout  Grid.Column="3" HorizontalOptions="Center">
-                <!--Settings Button-->
-                <ImageButton
-                Source="settings.svg"
-                BackgroundColor="{StaticResource Secondary}"
-                MaximumWidthRequest="30"
-                HorizontalOptions="Center"
-                Aspect="AspectFit" 
-                CornerRadius="15"/>
-
-                <Label Text="Settings"
-                        TextColor="{StaticResource PrimaryDarkText}"/>
-            </VerticalStackLayout>
-
-        </Grid>
+        
     </Grid>
 </ContentPage>

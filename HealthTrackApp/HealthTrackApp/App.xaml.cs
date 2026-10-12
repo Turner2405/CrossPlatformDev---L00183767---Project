@@ -1,4 +1,5 @@
-﻿using Microsoft.Extensions.DependencyInjection;
+﻿using HealthTrackApp.Pages;
+using Microsoft.Extensions.DependencyInjection;
 
 namespace HealthTrackApp
 {
@@ -7,8 +8,8 @@ namespace HealthTrackApp
         public App()
         {
             InitializeComponent();
+            
 
-           
         }
 
         protected override Window CreateWindow(IActivationState? activationState)

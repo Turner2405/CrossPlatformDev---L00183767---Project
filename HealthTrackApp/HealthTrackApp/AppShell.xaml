@@ -5,48 +5,63 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:local="clr-namespace:HealthTrackApp.Pages"
     Title="HealthTrackApp"
-    Shell.NavBarIsVisible="true"
     Shell.BackgroundColor="{StaticResource PrimaryDark}"
     Shell.ForegroundColor="White"
-    Shell.TitleColor="White"
+    Shell.NavBarIsVisible="true"
     Shell.TabBarBackgroundColor="{StaticResource Secondary}"
     Shell.TabBarForegroundColor="{StaticResource Primary}"
     Shell.TabBarTitleColor="{StaticResource Primary}"
-    >
+    Shell.TitleColor="White">
 
 
     <Shell.TitleView>
-    <Grid ColumnDefinitions="*,auto"
-              Padding="10"
-              ColumnSpacing="10">
-        <Label Grid.Column="0"  Text="HealthTrack"
-                   FontSize="24"
-                   FontAttributes="Bold"
-                   VerticalOptions="Center"
-                   TextColor="white"/>
-        <Border Grid.Column ="1" StrokeShape="RoundRectangle 15" MaximumWidthRequest="50" Stroke="{StaticResource Primary}">
-            <Button 
-                    FontAttributes="Bold"
-                    FontSize="12"
-                    BackgroundColor="{StaticResource Secondary}"
-                    ImageSource="profile.png"
-                    Clicked="OnProfileClicked"
-                    />
-        </Border>
-    </Grid>
-</Shell.TitleView>
+        <Grid
+            Padding="10"
+            ColumnDefinitions="*,auto,auto,auto"
+            ColumnSpacing="10"
+            HeightRequest="70"
+            HorizontalOptions="Start"
+            WidthRequest="400">
+            <Label
+                Grid.Column="0"
+                FontAttributes="Bold"
+                FontSize="24"
+                Text="HealthTrack"
+                TextColor="{StaticResource Secondary}"
+                VerticalOptions="Center" />
 
-<TabBar>
-    <ShellContent Title="Home" Icon="house.png"
-         ContentTemplate="{DataTemplate local:DashBoard}"
-         Route="DashBoard" />
-    <ShellContent Title="Statistics" Icon="stats.png" 
-                  ContentTemplate="{DataTemplate local:StatisticsPage}"
-                  Route="StatisticsPage"/>
-    <ShellContent Title="Goals" Icon="goals.png"
-         />
-    <ShellContent Title="Settings" Icon="settings.png"
-         />
-</TabBar>
-    
+            <ImageButton
+                Grid.Row="0"
+                Grid.Column="4"
+                Clicked="OnProfileClicked"
+                HeightRequest="50"
+                HorizontalOptions="End"
+                Source="profile.png"
+                WidthRequest="50" />
+        </Grid>
+    </Shell.TitleView>
+
+    <TabBar>
+        <ShellContent
+            Title="Home"
+            ContentTemplate="{DataTemplate local:DashBoard}"
+            Icon="house.png"
+            Route="DashBoard" />
+        <ShellContent
+            Title="Statistics"
+            ContentTemplate="{DataTemplate local:StatisticsPage}"
+            Icon="stats.png"
+            Route="StatisticsPage" />
+        <ShellContent
+            Title="Goals"
+            ContentTemplate="{DataTemplate local:GoalsPage}"
+            Icon="goals.png"
+            Route="GoalsPages" />
+        <ShellContent
+            Title="Settings"
+            ContentTemplate="{DataTemplate local:SettingsPage}"
+            Icon="settings.png"
+            Route="SettingsPage" />
+    </TabBar>
+
 </Shell>

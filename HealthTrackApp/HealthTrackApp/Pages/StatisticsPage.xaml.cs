@@ -13,5 +13,8 @@ public partial class StatisticsPage : ContentPage
         await Shell.Current.GoToAsync("..");
     }
 
-
+    private async void OnProfileClicked(object sender, EventArgs e)
+    {
+        await Shell.Current.GoToAsync("ProfilePage");
+    }
 }

@@ -11,4 +11,9 @@ public partial class ProfilePage : ContentPage
     {
         await Shell.Current.GoToAsync("..");
     }
+
+    private async void OnEditProfileButtonClicked(object sender, EventArgs e)
+    {
+        await Shell.Current.GoToAsync("EditProfile");
+    }
 }

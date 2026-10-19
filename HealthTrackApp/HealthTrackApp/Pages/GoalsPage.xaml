@@ -1,0 +1,363 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="HealthTrackApp.Pages.GoalsPage"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    Title="Goals">
+
+    <Shell.TitleView>
+        <Grid
+            Padding="10"
+            ColumnDefinitions="*,auto,auto,auto"
+            ColumnSpacing="10"
+            HeightRequest="70"
+            HorizontalOptions="Start"
+            WidthRequest="400">
+            <Label
+                Grid.Column="0"
+                FontAttributes="Bold"
+                FontSize="24"
+                Text="Goals"
+                TextColor="{StaticResource Secondary}"
+                VerticalOptions="Center" />
+
+            <ImageButton
+                Grid.Row="0"
+                Grid.Column="4"
+                Clicked="OnProfileClicked"
+                HeightRequest="50"
+                HorizontalOptions="End"
+                Source="profile.png"
+                WidthRequest="50" />
+        </Grid>
+    </Shell.TitleView>
+    <Grid RowDefinitions="*,Auto">
+
+        <ScrollView Grid.Row="0">
+            <VerticalStackLayout Padding="20" Spacing="20">
+
+                <VerticalStackLayout Spacing="4">
+                    <Label
+                        FontAttributes="Bold"
+                        FontSize="28"
+                        Text="My Goals"
+                        TextColor="{StaticResource PrimaryDark}" />
+
+                    <Label
+                        FontSize="14"
+                        Text="Build healthy habits, one day at a time."
+                        TextColor="{StaticResource Primary}" />
+                </VerticalStackLayout>
+
+                <Border
+                    Padding="18"
+                    BackgroundColor="{StaticResource Secondary}"
+                    StrokeShape="RoundRectangle 18"
+                    StrokeThickness="0">
+
+                    <VerticalStackLayout Spacing="12">
+
+                        <Grid ColumnDefinitions="*,Auto">
+                            <VerticalStackLayout Spacing="4">
+                                <Label
+                                    FontAttributes="Bold"
+                                    FontSize="20"
+                                    Text="Daily Steps"
+                                    TextColor="{StaticResource PrimaryDark}" />
+
+                                <Label
+                                    FontSize="14"
+                                    Text="7,240 of 10,000 steps"
+                                    TextColor="{StaticResource Primary}" />
+                            </VerticalStackLayout>
+
+                            <Label
+                                Grid.Column="1"
+                                FontAttributes="Bold"
+                                FontSize="20"
+                                Text="72%"
+                                TextColor="{StaticResource PrimaryDark}"
+                                VerticalOptions="Center" />
+                        </Grid>
+
+                        <ProgressBar
+                            BackgroundColor="Transparent"
+                            HeightRequest="10"
+                            Progress="0.724"
+                            ProgressColor="#438D88" />
+
+                        <Label
+                            FontSize="13"
+                            Text="Keep going! You're nearly there."
+                            TextColor="{StaticResource Primary}" />
+
+                    </VerticalStackLayout>
+                </Border>
+
+                <Grid ColumnDefinitions="*,*" ColumnSpacing="12">
+
+                    <Border
+                        Padding="14"
+                        BackgroundColor="#FFFFFF"
+                        Stroke="#E4E9E9"
+                        StrokeShape="RoundRectangle 16">
+
+                        <VerticalStackLayout Spacing="10">
+                            <Image
+                                HeightRequest="32"
+                                HorizontalOptions="Start"
+                                Source="moon.png"
+                                WidthRequest="32" />
+
+                            <Label
+                                FontAttributes="Bold"
+                                FontSize="18"
+                                Text="Sleep"
+                                TextColor="Purple" />
+
+                            <Label
+                                FontSize="13"
+                                Text="7h 45m / 8h"
+                                TextColor="#777777" />
+
+                            <ProgressBar
+                                BackgroundColor="Transparent"
+                                Progress="0.97"
+                                ProgressColor="#9986D2" />
+
+                            <Button
+                                Padding="8"
+                                BackgroundColor="#DFD8F7"
+                                CornerRadius="10"
+                                FontSize="13"
+                                Text="Edit Goal"
+                                TextColor="#514080" />
+                        </VerticalStackLayout>
+                    </Border>
+
+                    <Border
+                        Grid.Column="1"
+                        Padding="14"
+                        BackgroundColor="#FFFFFF"
+                        Stroke="#E4E9E9"
+                        StrokeShape="RoundRectangle 16">
+
+                        <VerticalStackLayout Spacing="10">
+                            <Image
+                                HeightRequest="32"
+                                HorizontalOptions="Start"
+                                Source="workout.png"
+                                WidthRequest="32" />
+
+                            <Label
+                                FontAttributes="Bold"
+                                FontSize="18"
+                                Text="Exercise"
+                                TextColor="Green" />
+
+                            <Label
+                                FontSize="13"
+                                Text="3 of 5 sessions"
+                                TextColor="#777777" />
+
+                            <ProgressBar
+                                BackgroundColor="Transparent"
+                                Progress="0.6"
+                                ProgressColor="#438D88" />
+
+                            <Button
+                                Padding="8"
+                                BackgroundColor="#CEE3E1"
+                                CornerRadius="10"
+                                FontSize="13"
+                                Text="Edit Goal"
+                                TextColor="#245D5B" />
+                        </VerticalStackLayout>
+                    </Border>
+
+                </Grid>
+
+                <Border
+                    Padding="16"
+                    BackgroundColor="{StaticResource Secondary}"
+                    Stroke="#E4E9E9"
+                    StrokeShape="RoundRectangle 16">
+
+                    <VerticalStackLayout Spacing="12">
+
+                        <Label
+                            FontAttributes="Bold"
+                            FontSize="20"
+                            Text="Water Intake"
+                            TextColor="DarkCyan" />
+
+                        <Grid ColumnDefinitions="*,Auto">
+                            <Label
+                                FontSize="14"
+                                Text="1.5 L of 2 L"
+                                TextColor="{StaticResource SecondaryDarkText}" />
+
+                            <Label
+                                Grid.Column="1"
+                                FontAttributes="Bold"
+                                FontSize="14"
+                                Text="75%"
+                                TextColor="{StaticResource SecondaryDarkText}" />
+                        </Grid>
+
+                        <ProgressBar
+                            BackgroundColor="Transparent"
+                            Progress="0.75"
+                            ProgressColor="Aqua" />
+
+                        <Button
+                            BackgroundColor="#D5ffff"
+                            CornerRadius="10"
+                            Text="Edit Goal"
+                            TextColor="#514080" />
+
+                    </VerticalStackLayout>
+                </Border>
+
+                <VerticalStackLayout Spacing="12">
+                    <Label
+                        FontAttributes="Bold"
+                        FontSize="22"
+                        Text="Weekly Activity"
+                        TextColor="{StaticResource Primary}" />
+
+                    <Label
+                        FontSize="14"
+                        Text="Daily step goal: 10,000"
+                        TextColor="{StaticResource SecondaryDarkText}" />
+
+                    <Border
+                        Padding="16"
+                        BackgroundColor="White"
+                        Stroke="#E4E9E9"
+                        StrokeShape="RoundRectangle 16">
+
+                        <VerticalStackLayout Spacing="14">
+
+                            <Grid ColumnDefinitions="35,*,40">
+                                <Label Text="Mon" TextColor="#555555" />
+                                <ProgressBar
+                                    Grid.Column="1"
+                                    Progress="1"
+                                    ProgressColor="{StaticResource Primary}"
+                                    VerticalOptions="Center" />
+                                <Label
+                                    Grid.Column="2"
+                                    FontSize="11"
+                                    Text="100%"
+                                    TextColor="#555555" />
+                            </Grid>
+
+                            <Grid ColumnDefinitions="35,*,40">
+                                <Label Text="Tue" TextColor="#555555" />
+                                <ProgressBar
+                                    Grid.Column="1"
+                                    Progress="0.72"
+                                    ProgressColor="{StaticResource Tertiary}"
+                                    VerticalOptions="Center" />
+                                <Label
+                                    Grid.Column="2"
+                                    FontSize="11"
+                                    Text="72%"
+                                    TextColor="#555555" />
+                            </Grid>
+
+                            <Grid ColumnDefinitions="35,*,40">
+                                <Label Text="Wed" TextColor="#555555" />
+                                <ProgressBar
+                                    Grid.Column="1"
+                                    Progress="1"
+                                    ProgressColor="{StaticResource Primary}"
+                                    VerticalOptions="Center" />
+                                <Label
+                                    Grid.Column="2"
+                                    FontSize="11"
+                                    Text="100%"
+                                    TextColor="#555555" />
+                            </Grid>
+
+                            <Grid ColumnDefinitions="35,*,40">
+                                <Label Text="Thu" TextColor="#555555" />
+                                <ProgressBar
+                                    Grid.Column="1"
+                                    Progress="0.48"
+                                    ProgressColor="{StaticResource Tertiary}"
+                                    VerticalOptions="Center" />
+                                <Label
+                                    Grid.Column="2"
+                                    FontSize="11"
+                                    Text="48%"
+                                    TextColor="#555555" />
+                            </Grid>
+
+                            <Grid ColumnDefinitions="35,*,40">
+                                <Label Text="Fri" TextColor="#555555" />
+                                <ProgressBar
+                                    Grid.Column="1"
+                                    Progress="0.85"
+                                    ProgressColor="{StaticResource Primary}"
+                                    VerticalOptions="Center" />
+                                <Label
+                                    Grid.Column="2"
+                                    FontSize="11"
+                                    Text="85%"
+                                    TextColor="#555555" />
+                            </Grid>
+
+                            <Grid ColumnDefinitions="35,*,40">
+                                <Label Text="Sat" TextColor="#555555" />
+                                <ProgressBar
+                                    Grid.Column="1"
+                                    Progress="1"
+                                    ProgressColor="{StaticResource Tertiary}"
+                                    VerticalOptions="Center" />
+                                <Label
+                                    Grid.Column="2"
+                                    FontSize="11"
+                                    Text="100%"
+                                    TextColor="#555555" />
+                            </Grid>
+
+                            <Grid ColumnDefinitions="35,*,40">
+                                <Label Text="Sun" TextColor="#555555" />
+                                <ProgressBar
+                                    Grid.Column="1"
+                                    Progress="0.6"
+                                    ProgressColor="{StaticResource Primary}"
+                                    VerticalOptions="Center" />
+                                <Label
+                                    Grid.Column="2"
+                                    FontSize="11"
+                                    Text="60%"
+                                    TextColor="#555555" />
+                            </Grid>
+
+                            <Label
+                                FontAttributes="Bold"
+                                FontSize="14"
+                                Text="You reached your step goal on 3 of 7 days."
+                                TextColor="#245D5B" />
+
+                        </VerticalStackLayout>
+                    </Border>
+                </VerticalStackLayout>
+
+                <Button
+                    BackgroundColor="{StaticResource Tertiary}"
+                    CornerRadius="14"
+                    FontAttributes="Bold"
+                    FontSize="17"
+                    HeightRequest="58"
+                    Text="+  Add New Goal"
+                    TextColor="#FFFFFF" />
+
+            </VerticalStackLayout>
+        </ScrollView>
+
+    </Grid>
+</ContentPage>

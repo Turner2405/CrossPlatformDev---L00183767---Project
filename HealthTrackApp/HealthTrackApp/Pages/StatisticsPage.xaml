@@ -1,107 +1,244 @@
 <?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="HealthTrackApp.Pages.StatisticsPage"
-             Title="StatisticsPage">
+<ContentPage
+    x:Class="HealthTrackApp.Pages.StatisticsPage"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    Title="StatisticsPage">
 
     <Shell.TitleView>
-        <Grid ColumnDefinitions="*,auto"
-          RowDefinitions="auto,auto"
-          Padding="10"
-          ColumnSpacing="10"
-          HorizontalOptions="Start">
-            <Label Grid.Column="0"  
-               Grid.Row="0"
-               Text="Statistics"
-               FontSize="18"
-               FontAttributes="Bold"
-               VerticalOptions="Center"
-               TextColor="white"/>
-            <Label Grid.Column="0"
-               Grid.Row="1"  
-               Text="View your current statistics"
-               FontSize="10"
-               FontAttributes="Bold"
-               VerticalOptions="Center"
-               TextColor="white"/>
+        <Grid
+            Padding="10"
+            ColumnDefinitions="*,auto,auto,auto"
+            ColumnSpacing="10"
+            HeightRequest="70"
+            HorizontalOptions="Start"
+            WidthRequest="400">
+            <Label
+                Grid.Column="0"
+                FontAttributes="Bold"
+                FontSize="24"
+                Text="Statistics"
+                TextColor="{StaticResource Secondary}"
+                VerticalOptions="Center" />
 
+            <ImageButton
+                Grid.Row="0"
+                Grid.Column="4"
+                Clicked="OnProfileClicked"
+                HeightRequest="50"
+                HorizontalOptions="End"
+                Source="profile.png"
+                WidthRequest="50" />
         </Grid>
     </Shell.TitleView>
     <ScrollView>
-        
-         <VerticalStackLayout HorizontalOptions="Center">
-            <Grid RowDefinitions="auto" ColumnDefinitions="auto" Padding="10" ColumnSpacing="10" HorizontalOptions="Center">
-                <!--Current Period Buttons-->
-                <Border Stroke="{StaticResource Primary}"
-                    StrokeThickness="1"
-                    StrokeShape="RoundRectangle 14"
+
+        <VerticalStackLayout HorizontalOptions="Center">
+            <Grid
+                Padding="10"
+                ColumnDefinitions="auto"
+                ColumnSpacing="10"
+                HorizontalOptions="Center"
+                RowDefinitions="auto,auto">
+                <!--  Current Period Buttons  -->
+                <Border
                     Padding="4"
-                    HorizontalOptions="Center">
+                    HorizontalOptions="Center"
+                    Stroke="{StaticResource Primary}"
+                    StrokeShape="RoundRectangle 14"
+                    StrokeThickness="1">
 
                     <Grid ColumnDefinitions="auto,auto,auto,auto" ColumnSpacing="2">
-                        <Button Grid.Column="0"
-                            Text="1 Week"
+                        <Button
+                            Grid.Column="0"
+                            Padding="10,8"
                             BackgroundColor="{StaticResource PrimaryDark}"
-                            TextColor="White"
                             CornerRadius="10"
-                            Padding="10,8"
                             FontSize="13"
-                            HeightRequest="40"/>
-                        <Button Grid.Column="1"
+                            HeightRequest="40"
+                            Text="1 Week"
+                            TextColor="White" />
+                        <Button
+                            Grid.Column="1"
+                            Padding="10,8"
+                            BackgroundColor="Transparent"
+                            CornerRadius="10"
+                            FontSize="13"
+                            HeightRequest="40"
                             Text="1 Month"
-                            BackgroundColor="Transparent"
-                            TextColor="{StaticResource PrimaryDarkText}"
-                            CornerRadius="10"
+                            TextColor="{StaticResource PrimaryDarkText}" />
+                        <Button
+                            Grid.Column="2"
                             Padding="10,8"
+                            BackgroundColor="Transparent"
+                            CornerRadius="10"
                             FontSize="13"
-                            HeightRequest="40"/>
-                        <Button Grid.Column="2"
+                            HeightRequest="40"
                             Text="1 Year"
-                            BackgroundColor="Transparent"
-                            TextColor="{StaticResource PrimaryDarkText}"
-                            CornerRadius="10"
+                            TextColor="{StaticResource PrimaryDarkText}" />
+                        <Button
+                            Grid.Column="3"
                             Padding="10,8"
+                            BackgroundColor="Transparent"
+                            CornerRadius="10"
                             FontSize="13"
-                            HeightRequest="40"/>
-                        <Button Grid.Column="3"
+                            HeightRequest="40"
                             Text="All Time"
-                            BackgroundColor="Transparent"
-                            TextColor="{StaticResource PrimaryDarkText}"
-                            CornerRadius="10"
-                            Padding="10,8"
-                            FontSize="13"
-                            HeightRequest="40"/>
+                            TextColor="{StaticResource PrimaryDarkText}" />
 
                     </Grid>
                 </Border>
             </Grid>
 
-            <Grid Padding="15">
-                <Border Stroke="{StaticResource Primary}"
-                        StrokeShape="RoundRectangle 18"
-                        Padding="15"
-                        BackgroundColor="White"
-                        StrokeThickness="5">
+            <Grid
+                Padding="15"
+                RowDefinitions="Auto,Auto,Auto,Auto"
+                RowSpacing="15">
+
+                <Border
+                    Grid.Row="0"
+                    Padding="15"
+                    BackgroundColor="White"
+                    Stroke="{StaticResource Primary}"
+                    StrokeShape="RoundRectangle 18"
+                    StrokeThickness="5">
 
                     <VerticalStackLayout Spacing="15">
 
-                        <Label Text="Daily Steps"
-                               FontSize="18"
-                               FontAttributes="Bold"
-                               TextColor="{StaticResource PrimaryDarkText}"/>
-                        <Label Text="Steps taken each day"
-                               FontSize="13"
-                               TextColor="{StaticResource SecondaryDarkText}"/>
+                        <Label
+                            FontAttributes="Bold"
+                            FontSize="18"
+                            Text="Daily Steps"
+                            TextColor="{StaticResource PrimaryDarkText}" />
 
-                        <GraphicsView x:Name="StepsChart"
-                                      HeightRequest="230"
-                                      HorizontalOptions="Fill"/>
+                        <Label
+                            FontSize="13"
+                            Text="Steps taken each day"
+                            TextColor="{StaticResource SecondaryDarkText}" />
+
+                        <GraphicsView
+                            x:Name="StepsChart"
+                            HeightRequest="230"
+                            HorizontalOptions="Fill" />
+
                     </VerticalStackLayout>
-
                 </Border>
+
+                <Label
+                    Grid.Row="1"
+                    FontAttributes="Bold"
+                    FontSize="21"
+                    Text="Weekly Summary"
+                    TextColor="{StaticResource PrimaryDark}" />
+
+                <Grid
+                    Grid.Row="2"
+                    ColumnDefinitions="*,*"
+                    ColumnSpacing="12">
+
+                    <Border
+                        Grid.Column="0"
+                        Padding="14"
+                        BackgroundColor="{StaticResource LightTeal}"
+                        Stroke="{StaticResource BorderColor}"
+                        StrokeShape="RoundRectangle 14">
+
+                        <VerticalStackLayout Spacing="8">
+
+                            <Image
+                                Aspect="AspectFit"
+                                HeightRequest="30"
+                                HorizontalOptions="Start"
+                                Source="footprints.svg"
+                                WidthRequest="30" />
+
+                            <Label
+                                FontSize="14"
+                                Text="Total steps"
+                                TextColor="{StaticResource PrimaryDark}" />
+
+                            <Label
+                                FontAttributes="Bold"
+                                FontSize="24"
+                                Text="82,000"
+                                TextColor="{StaticResource PrimaryDark}" />
+
+                            <Label
+                                FontSize="12"
+                                Text="This week"
+                                TextColor="{StaticResource SecondaryDarkText}" />
+
+                        </VerticalStackLayout>
+                    </Border>
+
+                    <Border
+                        Grid.Column="1"
+                        Padding="14"
+                        BackgroundColor="{StaticResource LightTeal}"
+                        Stroke="{StaticResource BorderColor}"
+                        StrokeShape="RoundRectangle 14">
+
+                        <VerticalStackLayout Spacing="8">
+
+                            <Image
+                                Aspect="AspectFit"
+                                HeightRequest="30"
+                                HorizontalOptions="Start"
+                                Source="footprints.svg"
+                                WidthRequest="30" />
+
+                            <Label
+                                FontSize="14"
+                                Text="Daily average"
+                                TextColor="{StaticResource PrimaryDark}" />
+
+                            <Label
+                                FontAttributes="Bold"
+                                FontSize="24"
+                                Text="11,714"
+                                TextColor="{StaticResource PrimaryDark}" />
+
+                            <Label
+                                FontSize="12"
+                                Text="Steps per day"
+                                TextColor="{StaticResource SecondaryDarkText}" />
+
+                        </VerticalStackLayout>
+                    </Border>
+
+                </Grid>
+
+                <Border
+                    Grid.Row="3"
+                    Padding="16"
+                    BackgroundColor="{StaticResource CardBackground}"
+                    Stroke="{StaticResource BorderColor}"
+                    StrokeShape="RoundRectangle 14">
+
+                    <VerticalStackLayout Spacing="8">
+
+                        <Label
+                            FontAttributes="Bold"
+                            FontSize="18"
+                            Text="Weekly Insight"
+                            TextColor="{StaticResource PrimaryDark}" />
+
+                        <Label
+                            FontAttributes="Bold"
+                            FontSize="14"
+                            Text="Your most active day was Monday!"
+                            TextColor="{StaticResource PrimaryDark}" />
+                        <Label
+                            FontSize="14"
+                            Text="You achieved your goal average of 10,000 steps for the week!"
+                            TextColor="{StaticResource PrimaryDark}" />
+
+                    </VerticalStackLayout>
+                </Border>
+
             </Grid>
-   
-      
-     </VerticalStackLayout>
+
+
+        </VerticalStackLayout>
     </ScrollView>
 </ContentPage>

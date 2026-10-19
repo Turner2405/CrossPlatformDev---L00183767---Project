@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="HealthTrackApp.Pages.SettingsPage"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    Title="SettingsPage">
+    <Shell.TitleView>
+        <Grid
+            Padding="10"
+            ColumnDefinitions="*,auto,auto,auto"
+            ColumnSpacing="10"
+            HeightRequest="70"
+            HorizontalOptions="Start"
+            WidthRequest="400">
+            <Label
+                Grid.Column="0"
+                FontAttributes="Bold"
+                FontSize="24"
+                Text="Settings"
+                TextColor="{StaticResource Secondary}"
+                VerticalOptions="Center" />
+
+            <ImageButton
+                Grid.Row="0"
+                Grid.Column="4"
+                HeightRequest="50"
+                HorizontalOptions="End"
+                Source="profile.png"
+                WidthRequest="50" />
+        </Grid>
+    </Shell.TitleView>
+    <VerticalStackLayout>
+        <Label
+            HorizontalOptions="Center"
+            Text="Welcome to .NET MAUI!"
+            VerticalOptions="Center" />
+    </VerticalStackLayout>
+</ContentPage>

@@ -464,7 +464,7 @@
                     </VerticalStackLayout>
                 </Border>
 
-
+                <Border />
                 <!--  Recent Activity  -->
                 <VerticalStackLayout Margin="0,12,0,20" Spacing="16">
 

@@ -1,294 +1,641 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="HealthTrackApp.Pages.DashBoard"
-             BackgroundColor="White">
+<ContentPage
+    x:Class="HealthTrackApp.Pages.DashBoard"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    BackgroundColor="White">
 
-      
-        <Grid RowDefinitions="*,auto">
+
+    <Grid RowDefinitions="*,auto">
         <ScrollView>
-        
-            <VerticalStackLayout
-            Padding="10,0"
-            Spacing="18">
-                
-                <!--Daily Report title-->
-                <Grid ColumnDefinitions="*,*" RowDefinitions="*,*,*,*,*" RowSpacing="10" ColumnSpacing="10" Padding="15">
-                    <Label 
+
+            <VerticalStackLayout Padding="10,0" Spacing="18">
+
+                <!--  Daily Report title  -->
+                <Grid
+                    Padding="15"
+                    ColumnDefinitions="*,*"
+                    ColumnSpacing="10"
+                    RowDefinitions="*,*,*,*,*"
+                    RowSpacing="10">
+                    <Label
                         Grid.Row="0"
-                        
-                        FontAttributes="Bold" 
-                        TextColor="{StaticResource PrimaryDark}" 
+                        FontAttributes="Bold"
                         FontSize="18"
-                        >Good Morning Ryan!</Label>
-                    <Label 
-                        Grid.Row="1" 
-                        FontAttributes="Bold" 
-                        TextColor="{StaticResource PrimaryDark}" 
-                        FontSize="14">Here is your daily report.</Label>
-                
-               <!--Report Squares for steps,calories,sleep,weight-->
-       
-                        <!--Steps-->
-                        <Border Grid.Row="3" Grid.Column="0"
-                        Padding="14"
-                        BackgroundColor="{StaticResource LightTeal}"
+                        TextColor="{StaticResource PrimaryDark}">
+                        Good Morning Ryan!
+                    </Label>
+                    <Label
+                        Grid.Row="1"
+                        FontAttributes="Bold"
+                        FontSize="14"
+                        TextColor="{StaticResource PrimaryDark}">
+                        Here is your daily report.
+                    </Label>
+
+                    <!--  Report Squares for steps,calories,sleep,heart rate  -->
+
+                    <!--  Steps  -->
+                    <Border
+                        Grid.Row="3"
+                        Grid.Column="0"
+                        Padding="5"
+                        BackgroundColor="White"
+                        HeightRequest="150"
+                        Shadow="grey 0 0"
                         Stroke="{StaticResource BorderColor}"
-                        StrokeShape="RoundRectangle 14"
-                        Shadow="grey 0 0">
-                    
-                        <Grid ColumnDefinitions="45,*"
+                        StrokeShape="RoundRectangle 20"
+                        WidthRequest="170">
+
+                        <Grid
+                            Padding="10"
+                            ColumnDefinitions="45,*"
+                            ColumnSpacing="20"
                             RowDefinitions="auto,auto"
-                            ColumnSpacing="10"
-                            VerticalOptions="Center"
-                            RowSpacing="10">
-                            <Image
-                                 Grid.Column="0"
-                                 Source="footprints.svg" 
-                                 HeightRequest="40" 
-                                 WidthRequest="40" 
-                                 VerticalOptions="Center" 
-                                 Aspect="AspectFit"/>
-                            <VerticalStackLayout 
-                                Spacing="5"
-                                Grid.Column="1">
-                                <Label Text="Steps today"
-                               TextColor="{StaticResource PrimaryDark}"/>
+                            RowSpacing="10"
+                            VerticalOptions="Center">
+                            <Border
+                                BackgroundColor="{StaticResource Secondary}"
+                                HeightRequest="55"
+                                StrokeShape="Ellipse"
+                                StrokeThickness="0"
+                                WidthRequest="55">
+                                <Image
+                                    Grid.Column="0"
+                                    Aspect="AspectFit"
+                                    HeightRequest="40"
+                                    Source="footprints.png"
+                                    VerticalOptions="Center"
+                                    WidthRequest="40" />
+                            </Border>
+                            <VerticalStackLayout Grid.Column="1" Spacing="0">
+                                <Label
+                                    FontSize="13"
+                                    Text="Steps today"
+                                    TextColor="{StaticResource PrimaryDark}" />
 
-                                <Label Text="7,240"
-                               FontSize="26"
-                               FontAttributes="Bold"
-                               TextColor="{StaticResource PrimaryDark}"/>
+                                <!--  the labels will be replaced with the variables during the backend completion  -->
+                                <Label
+                                    FontAttributes="Bold"
+                                    FontSize="26"
+                                    Text="7,240"
+                                    TextColor="{StaticResource PrimaryDark}" />
 
-                                <Label Text="out of 10,000"
-                               FontSize="12"
-                               TextColor="{StaticResource PrimaryDark}"/>
-
-
-
-
+                                <Label
+                                    FontSize="12"
+                                    Text="out of 10,000"
+                                    TextColor="{StaticResource PrimaryDark}" />
                             </VerticalStackLayout>
-                            <Border Grid.ColumnSpan="2"  Grid.Row="2"
-                                   StrokeShape="RoundRectangle 10" 
-                                   HeightRequest="10"
-                                   >
-
+                            <Border
+                                Grid.Row="2"
+                                Grid.ColumnSpan="2"
+                                HeightRequest="10"
+                                StrokeShape="RoundRectangle 10">
                                 <ProgressBar
-                               
-                                Progress="0.724"
-                                ScaleY="2"
-                                ProgressColor="{StaticResource Primary}"/>
+                                    Progress="0.724"
+                                    ProgressColor="{StaticResource Primary}"
+                                    ScaleY="2" />
                             </Border>
                         </Grid>
                     </Border>
 
-                     <!--Calories-->
-                    <Border Grid.Row="3" Grid.Column="1"
-                            Padding="14"
-                            BackgroundColor="{StaticResource LightTeal}"
-                            Stroke="{StaticResource BorderColor}"
-                            StrokeShape="RoundRectangle 14"
-                            Shadow="grey 0 0">
+                    <!--  Calories  -->
+                    <Border
+                        Grid.Row="3"
+                        Grid.Column="1"
+                        Padding="5"
+                        BackgroundColor="White"
+                        HeightRequest="150"
+                        Shadow="grey 0 0"
+                        Stroke="{StaticResource BorderColor}"
+                        StrokeShape="RoundRectangle 20"
+                        WidthRequest="170">
 
-                        <Grid ColumnDefinitions="45,*"
+                        <Grid
+                            Padding="10"
+                            ColumnDefinitions="45,*"
+                            ColumnSpacing="20"
                             RowDefinitions="auto,auto"
-                            ColumnSpacing="10"
-                            VerticalOptions="Center"
-                            RowSpacing="10">
-                            <Image
-                                 Grid.Column="0"
-                                 Source="flame.svg" 
-                                 HeightRequest="40" 
-                                 WidthRequest="40" 
-                                 VerticalOptions="Center" 
-                                 Aspect="AspectFit"/>
-                            <VerticalStackLayout 
-                                Spacing="5"
-                                Grid.Column="1">
-                                <Label Text="Calories"
-                                       TextColor="{StaticResource PrimaryDark}"/>
+                            RowSpacing="10"
+                            VerticalOptions="Center">
+                            <Border
+                                BackgroundColor="LightYellow"
+                                HeightRequest="55"
+                                StrokeShape="Ellipse"
+                                StrokeThickness="0"
+                                WidthRequest="55">
+                                <Image
+                                    Grid.Column="0"
+                                    Aspect="AspectFit"
+                                    HeightRequest="40"
+                                    Source="flameorange.png"
+                                    VerticalOptions="Center"
+                                    WidthRequest="40" />
+                            </Border>
+                            <VerticalStackLayout Grid.Column="1" Spacing="0">
+                                <Label
+                                    FontSize="13"
+                                    Text="Calories"
+                                    TextColor="{StaticResource PrimaryDark}" />
 
-                                <Label Text="1854"
-                                       FontSize="26"
-                                       FontAttributes="Bold"
-                                       TextColor="{StaticResource PrimaryDark}"/>
+                                <!--  the labels will be replaced with the variables during the backend completion  -->
+                                <Label
+                                    FontAttributes="Bold"
+                                    FontSize="26"
+                                    Text="1,000"
+                                    TextColor="{StaticResource PrimaryDark}" />
 
-                                <Label Text="est. burned"
-                                       FontSize="12"
-                                       TextColor="{StaticResource PrimaryDark}"/>
+                                <Label
+                                    FontSize="12"
+                                    Text="est. burned"
+                                    TextColor="{StaticResource PrimaryDark}" />
                             </VerticalStackLayout>
+                            <Border
+                                Grid.Row="2"
+                                Grid.ColumnSpan="2"
+                                HeightRequest="10"
+                                StrokeShape="RoundRectangle 10">
+                                <ProgressBar
+                                    Progress="0.5"
+                                    ProgressColor="{StaticResource Tertiary}"
+                                    ScaleY="2" />
+
+                            </Border>
                         </Grid>
                     </Border>
-                    <!--Sleep-->
-                    <Border Grid.Row="4" Grid.Column="0"
-                            Padding="14"
-                            BackgroundColor="{StaticResource LightTeal}"
-                            Stroke="{StaticResource BorderColor}"
-                            StrokeShape="RoundRectangle 14"
-                            Shadow="grey 0 0">
+                    <!--  Sleep  -->
+                    <Border
+                        Grid.Row="4"
+                        Grid.Column="0"
+                        Padding="5"
+                        BackgroundColor="White"
+                        HeightRequest="150"
+                        Shadow="grey 0 0"
+                        Stroke="{StaticResource BorderColor}"
+                        StrokeShape="RoundRectangle 20"
+                        WidthRequest="170">
 
-                        <Grid ColumnDefinitions="45,*"
+                        <Grid
+                            Padding="10"
+                            ColumnDefinitions="45,*"
+                            ColumnSpacing="20"
                             RowDefinitions="auto,auto"
-                            ColumnSpacing="10"
-                            VerticalOptions="Center"
-                            RowSpacing="10">
-                            <Image
-                                 Grid.Column="0"
-                                 Source="sleep.svg" 
-                                 HeightRequest="40" 
-                                 WidthRequest="40" 
-                                 VerticalOptions="Center" 
-                                 Aspect="AspectFit"/>
-                            <VerticalStackLayout 
-                                Spacing="5"
-                                Grid.Column="1">
-                                <Label Text="Sleep"
-                                       TextColor="{StaticResource PrimaryDark}"/>
+                            RowSpacing="10"
+                            VerticalOptions="Center">
+                            <Border
+                                BackgroundColor="black"
+                                HeightRequest="55"
+                                StrokeShape="Ellipse"
+                                StrokeThickness="0"
+                                WidthRequest="55">
+                                <Image
+                                    Grid.Column="0"
+                                    Aspect="AspectFit"
+                                    HeightRequest="40"
+                                    Source="moon.png"
+                                    VerticalOptions="Center"
+                                    WidthRequest="40" />
+                            </Border>
+                            <VerticalStackLayout Grid.Column="1" Spacing="0">
+                                <!--  Sleep  -->
+                                <Label
+                                    FontSize="13"
+                                    Text="Sleep"
+                                    TextColor="{StaticResource PrimaryDark}" />
 
-                                <Label Text="7h 45m"
-                                       FontSize="20"
-                                       FontAttributes="Bold"
-                                       TextColor="{StaticResource PrimaryDark}"/>
+                                <!--  the labels will be replaced with the variables during the backend completion  -->
+                                <Label
+                                    FontAttributes="Bold"
+                                    FontSize="26"
+                                    Text="7hrs"
+                                    TextColor="{StaticResource PrimaryDark}" />
 
-                                <Label Text="Last night"
-                                       FontSize="12"
-                                       TextColor="{StaticResource PrimaryDark}"/>
+                                <Label
+                                    FontAttributes="Bold"
+                                    FontSize="12"
+                                    Text="45 mins"
+                                    TextColor="{StaticResource PrimaryDark}" />
                             </VerticalStackLayout>
+                            <Border
+                                Grid.Row="2"
+                                Grid.ColumnSpan="2"
+                                HeightRequest="10"
+                                StrokeShape="RoundRectangle 10">
+                                <ProgressBar
+                                    Progress="0.93125"
+                                    ProgressColor="#7950F2"
+                                    ScaleY="2" />
+
+                            </Border>
                         </Grid>
                     </Border>
-                    <!--Weight-->
-                    <Border Grid.Row="4" Grid.Column="1"
-                            Padding="14"
-                            BackgroundColor="{StaticResource LightTeal}"
-                            Stroke="{StaticResource BorderColor}"
-                            StrokeShape="RoundRectangle 14"
-                            Shadow="grey 0 0">
+                    <!--  Heart Rate  -->
+                    <Border
+                        Grid.Row="4"
+                        Grid.Column="1"
+                        Padding="5"
+                        BackgroundColor="White"
+                        HeightRequest="150"
+                        Shadow="grey 0 0"
+                        Stroke="{StaticResource BorderColor}"
+                        StrokeShape="RoundRectangle 20"
+                        WidthRequest="170">
 
-                        <Grid ColumnDefinitions="45,*"
+                        <Grid
+                            Padding="10"
+                            ColumnDefinitions="45,*"
+                            ColumnSpacing="20"
                             RowDefinitions="auto,auto"
-                            ColumnSpacing="10"
-                            VerticalOptions="Center"
-                            RowSpacing="10">
+                            RowSpacing="10"
+                            VerticalOptions="Center">
+                            <Border
+                                BackgroundColor="Wheat"
+                                HeightRequest="55"
+                                StrokeShape="Ellipse"
+                                StrokeThickness="0"
+                                WidthRequest="55">
+                                <Image
+                                    Grid.Column="0"
+                                    Aspect="AspectFit"
+                                    HeightRequest="40"
+                                    Source="heart.png"
+                                    VerticalOptions="Center"
+                                    WidthRequest="40" />
+                            </Border>
+                            <VerticalStackLayout Grid.Column="1" Spacing="0">
+                                <Label
+                                    FontSize="13"
+                                    Text="Heart Rate"
+                                    TextColor="{StaticResource PrimaryDark}" />
 
-                            <Image
-                                 Grid.Column="0"
-                                 Source="weight.png" 
-                                 HeightRequest="40" 
-                                 WidthRequest="40" 
-                                 VerticalOptions="Center" 
-                                 Aspect="AspectFit"/>
-                            <VerticalStackLayout 
-                                Spacing="5"
-                                Grid.Column="1">
-                                <Label Text="Weight"
-                                       TextColor="{StaticResource PrimaryDark}"/>
+                                <!--  the labels will be replaced with the variables during the backend completion  -->
+                                <Label
+                                    FontAttributes="Bold"
+                                    FontSize="26"
+                                    Text="65"
+                                    TextColor="{StaticResource PrimaryDark}" />
 
-                                <Label Text="75.4 kg"
-                                       FontSize="20"
-                                       FontAttributes="Bold"
-                                       TextColor="{StaticResource PrimaryDark}"/>
+                                <Label
+                                    FontAttributes="Bold"
+                                    FontSize="12"
+                                    Text="BPM"
+                                    TextColor="{StaticResource PrimaryDark}" />
 
-                                <Label Text="Latest"
-                                       FontSize="12"
-                                       TextColor="{StaticResource PrimaryDark}"/>
                             </VerticalStackLayout>
+
+                            <Label
+                                Grid.Row="1"
+                                Grid.ColumnSpan="2"
+                                FontSize="11"
+                                Text="Avg. Heart Rate is 60 - 100"
+                                TextColor="{StaticResource PrimaryDark}" />
                         </Grid>
                     </Border>
                 </Grid>
+                <Border />
+                <!--  Quick Actions  -->
+                <Border
+                    Margin="0,12,0,20"
+                    Padding="20"
+                    BackgroundColor="#F0F9F8"
+                    StrokeShape="RoundRectangle 24"
+                    StrokeThickness="0">
 
-                <Border></Border>
-                <!--Quick Actions-->
-                <Grid>
-                    <VerticalStackLayout>
-                        <Label Grid.Row="0"
-                             FontAttributes="Bold"
-                             Text="Quick Actions"
-                             FontSize="21"
-                             TextColor="{StaticResource PrimaryDark}">
+                    <VerticalStackLayout Spacing="20">
 
-                        </Label>
-                    </VerticalStackLayout>
-                </Grid>
-                
-                    <Grid ColumnDefinitions="*,auto, auto" RowDefinitions="auto,auto">
-                    <HorizontalStackLayout Padding="10" Spacing="10">
-                        <!--Log Activity-->
-                        <Border  StrokeThickness="0"  StrokeShape="RoundRectangle 18" Shadow="grey 0 0" >
-                            <Button Grid.Column="0"
-                                Text=" Log Activity"
-                                MaximumHeightRequest="50"
-                                MaximumWidthRequest="140"/>
-                        </Border>
-                        <!--Log Measurement-->
-                        <Border  StrokeThickness="0" StrokeShape="RoundRectangle 18" Shadow="grey 0 0">
-                            <Button Grid.Column="1"
-                                Text="Log Measurement"
-                                MaximumHeightRequest="50"
-                                MaximumWidthRequest="150"/>
-                        </Border>
-                        <!--Log Sleep-->
-                        <Border  StrokeThickness="0" StrokeShape="RoundRectangle 18" Shadow="grey 0 0">
-                            <Button Grid.Column="1"
-                                Text="Log Sleep"
-                                MaximumHeightRequest="50"
-                                MaximumWidthRequest="100"/>
-                        </Border>
-                    </HorizontalStackLayout>
-                </Grid>
-                <Border></Border>
-                <!--Recent Activites-->
-                <Grid ColumnDefinitions="*,Auto">
-                    <Label Text="Recent Activity"
-                       FontSize="21"
-                       FontAttributes="Bold"
-                       TextColor="{StaticResource PrimaryDark}"/>
+                        <!--  heading  -->
+                        <Grid ColumnDefinitions="*,Auto" VerticalOptions="Center">
 
-                    <Label Grid.Column="1"
-                       Text="Activity log "
-                       VerticalOptions="Center"
-                       TextColor="{StaticResource Primary}"/>
-                </Grid>
-
-                <Border Padding="14"
-                    BackgroundColor="{StaticResource CardBackground}"
-                    Stroke="{StaticResource BorderColor}"
-                    StrokeShape="RoundRectangle 14">
-
-                    <VerticalStackLayout Spacing="12">
-
-                        <Grid ColumnDefinitions="*,Auto">
-                            <VerticalStackLayout Spacing="4">
-                                <Label Text="Morning walk"
-                                   FontAttributes="Bold"
-                                   TextColor="{StaticResource PrimaryDark}"/>
-
-                                <Label Text="30 minutes"
-                                   FontSize="13"
-                                   TextColor="{StaticResource SecondaryDarkText}"/>
-                            </VerticalStackLayout>
+                            <Label
+                                FontAttributes="Bold"
+                                FontSize="24"
+                                Text="Quick Actions"
+                                TextColor="#064F52"
+                                VerticalOptions="Center" />
 
                         </Grid>
 
-                        <BoxView HeightRequest="1"
-                             Color="{StaticResource BorderColor}"/>
+                        <!--  Action block  -->
+                        <Grid ColumnDefinitions="*,*,*" ColumnSpacing="12">
 
-                        <Grid ColumnDefinitions="*,Auto">
-                            <VerticalStackLayout Spacing="4">
-                                <Label Text="Strength training"
-                                   FontAttributes="Bold"
-                                   TextColor="{StaticResource PrimaryDark}"/>
+                            <!--  Workout  -->
+                            <Border
+                                Grid.Column="0"
+                                Padding="10"
+                                BackgroundColor="#DDF7EE"
+                                StrokeShape="RoundRectangle 20"
+                                StrokeThickness="0">
 
-                                <Label Text="45 minutes"
-                                   FontSize="13"
-                                   TextColor="{StaticResource SecondaryDarkText}"/>
-                            </VerticalStackLayout>
+
+                                <VerticalStackLayout
+                                    HorizontalOptions="Center"
+                                    Spacing="14"
+                                    VerticalOptions="Center">
+
+                                    <Border
+                                        BackgroundColor="#83E5BB"
+                                        HeightRequest="90"
+                                        HorizontalOptions="Center"
+                                        StrokeShape="RoundRectangle 45"
+                                        StrokeThickness="0"
+                                        WidthRequest="90">
+
+                                        <Image
+                                            Aspect="AspectFit"
+                                            HeightRequest="48"
+                                            HorizontalOptions="Center"
+                                            Source="workout.png"
+                                            VerticalOptions="Center"
+                                            WidthRequest="48" />
+
+                                    </Border>
+
+                                    <Label
+                                        FontAttributes="Bold"
+                                        FontSize="16"
+                                        HorizontalTextAlignment="Center"
+                                        Text="Activity"
+                                        TextColor="#075B50" />
+
+                                    <Label
+                                        FontSize="28"
+                                        HorizontalTextAlignment="Center"
+                                        Text="›"
+                                        TextColor="#087F70" />
+
+                                </VerticalStackLayout>
+                            </Border>
+
+                            <!--  Measurement  -->
+                            <Border
+                                Grid.Column="1"
+                                Padding="10"
+                                BackgroundColor="#D5ffff"
+                                StrokeShape="RoundRectangle 20"
+                                StrokeThickness="0">
+
+                                <VerticalStackLayout
+                                    HorizontalOptions="Center"
+                                    Spacing="14"
+                                    VerticalOptions="Center">
+
+                                    <Border
+                                        BackgroundColor="LightBlue"
+                                        HeightRequest="90"
+                                        HorizontalOptions="Center"
+                                        StrokeShape="RoundRectangle 45"
+                                        StrokeThickness="0"
+                                        WidthRequest="90">
+
+                                        <Image
+                                            Aspect="AspectFit"
+                                            HeightRequest="48"
+                                            HorizontalOptions="Center"
+                                            Source="length.png"
+                                            VerticalOptions="Center"
+                                            WidthRequest="48" />
+
+                                    </Border>
+
+                                    <Label
+                                        FontAttributes="Bold"
+                                        FontSize="14"
+                                        HorizontalTextAlignment="Center"
+                                        Text="Measurement"
+                                        TextColor="DarkBlue" />
+
+                                    <Label
+                                        FontSize="28"
+                                        HorizontalTextAlignment="Center"
+                                        Text="›"
+                                        TextColor="DarkBlue" />
+
+                                </VerticalStackLayout>
+                            </Border>
+
+                            <!--  Sleep  -->
+                            <Border
+                                Grid.Column="2"
+                                Padding="10"
+                                BackgroundColor="#E8DDFB"
+                                StrokeShape="RoundRectangle 20"
+                                StrokeThickness="0">
+
+                                <VerticalStackLayout
+                                    HorizontalOptions="Center"
+                                    Spacing="14"
+                                    VerticalOptions="Center">
+
+                                    <Border
+                                        BackgroundColor="#BFA5F0"
+                                        HeightRequest="90"
+                                        HorizontalOptions="Center"
+                                        StrokeShape="RoundRectangle 45"
+                                        StrokeThickness="0"
+                                        WidthRequest="90">
+
+                                        <Image
+                                            Aspect="AspectFit"
+                                            HeightRequest="48"
+                                            HorizontalOptions="Center"
+                                            Source="moon.png"
+                                            VerticalOptions="Center"
+                                            WidthRequest="48" />
+
+                                    </Border>
+
+                                    <Label
+                                        FontAttributes="Bold"
+                                        FontSize="16"
+                                        HorizontalTextAlignment="Center"
+                                        Text="Sleep"
+                                        TextColor="MediumPurple" />
+
+                                    <Label
+                                        FontSize="28"
+                                        HorizontalTextAlignment="Center"
+                                        Text="›"
+                                        TextColor="#9165E8" />
+
+                                </VerticalStackLayout>
+                            </Border>
+
                         </Grid>
-
                     </VerticalStackLayout>
                 </Border>
+
+
+                <!--  Recent Activity  -->
+                <VerticalStackLayout Margin="0,12,0,20" Spacing="16">
+
+                    <!--  heading  -->
+                    <Grid ColumnDefinitions="*,Auto" VerticalOptions="Center">
+
+                        <Label
+                            FontAttributes="Bold"
+                            FontSize="22"
+                            Text="Recent Activity"
+                            TextColor="#075456"
+                            VerticalOptions="Center" />
+
+                        <Label
+                            Grid.Column="1"
+                            FontSize="14"
+                            Text="Activity log  ›"
+                            TextColor="#159F9A"
+                            VerticalOptions="Center" />
+
+                    </Grid>
+
+                    <!--  Each activity will be in a list and added  -->
+                    <Border
+                        Padding="0"
+                        BackgroundColor="White"
+                        Stroke="#DDEFEF"
+                        StrokeShape="RoundRectangle 18"
+                        StrokeThickness="1.5">
+
+                        <Grid ColumnDefinitions="6,*">
+
+
+                            <Border
+                                Grid.Column="0"
+                                BackgroundColor="{StaticResource Tertiary}"
+                                StrokeShape="RoundRectangle 3"
+                                StrokeThickness="0" />
+
+                            <!--  details  -->
+                            <Grid
+                                Grid.Column="1"
+                                Padding="14"
+                                ColumnDefinitions="68,*,Auto"
+                                ColumnSpacing="14"
+                                VerticalOptions="Center">
+
+                                <Border
+                                    Grid.Column="0"
+                                    BackgroundColor="#D2F0E9"
+                                    HeightRequest="64"
+                                    StrokeShape="RoundRectangle 32"
+                                    StrokeThickness="0"
+                                    VerticalOptions="Center"
+                                    WidthRequest="64">
+
+                                    <Image
+                                        HeightRequest="50"
+                                        Source="walk.png"
+                                        WidthRequest="40" />
+
+                                </Border>
+
+                                <!--  Activity information  -->
+                                <VerticalStackLayout
+                                    Grid.Column="1"
+                                    Spacing="6"
+                                    VerticalOptions="Center">
+
+                                    <Label
+                                        FontAttributes="Bold"
+                                        FontSize="17"
+                                        Text="Morning walk"
+                                        TextColor="#075456" />
+
+                                    <Label
+                                        FontSize="14"
+                                        Text="Walk | 30 minutes | 350 kcal"
+                                        TextColor="#68858B" />
+
+                                </VerticalStackLayout>
+
+                                <!--  View details arrow  -->
+                                <Label
+                                    Grid.Column="2"
+                                    FontSize="32"
+                                    HorizontalOptions="Center"
+                                    Text="›"
+                                    TextColor="#68858B"
+                                    VerticalOptions="Center" />
+
+                            </Grid>
+                        </Grid>
+                    </Border>
+                    <Border
+                        Padding="0"
+                        BackgroundColor="White"
+                        Stroke="#DDEFEF"
+                        StrokeShape="RoundRectangle 18"
+                        StrokeThickness="1.5">
+
+                        <Grid ColumnDefinitions="6,*">
+
+
+                            <Border
+                                Grid.Column="0"
+                                BackgroundColor="{StaticResource Primary}"
+                                StrokeShape="RoundRectangle 3"
+                                StrokeThickness="0" />
+
+                            <!--  details  -->
+                            <Grid
+                                Grid.Column="1"
+                                Padding="14"
+                                ColumnDefinitions="68,*,Auto"
+                                ColumnSpacing="14"
+                                VerticalOptions="Center">
+
+                                <Border
+                                    Grid.Column="0"
+                                    BackgroundColor="#D2F0E9"
+                                    HeightRequest="64"
+                                    StrokeShape="RoundRectangle 32"
+                                    StrokeThickness="0"
+                                    VerticalOptions="Center"
+                                    WidthRequest="64">
+
+                                    <Image
+                                        HeightRequest="50"
+                                        Source="bjj.png"
+                                        WidthRequest="40" />
+
+                                </Border>
+
+                                <!--  Activity information  -->
+                                <VerticalStackLayout
+                                    Grid.Column="1"
+                                    Spacing="6"
+                                    VerticalOptions="Center">
+
+                                    <Label
+                                        FontAttributes="Bold"
+                                        FontSize="17"
+                                        Text="BJJ Training"
+                                        TextColor="#075456" />
+
+                                    <Label
+                                        FontSize="14"
+                                        Text="BJJ | 1 hr 30 minutes | 800 kcal"
+                                        TextColor="#68858B" />
+
+                                </VerticalStackLayout>
+
+                                <!--  View details arrow  -->
+                                <Label
+                                    Grid.Column="2"
+                                    FontSize="32"
+                                    HorizontalOptions="Center"
+                                    Text="›"
+                                    TextColor="#68858B"
+                                    VerticalOptions="Center" />
+
+                            </Grid>
+                        </Grid>
+                    </Border>
+
+
+                </VerticalStackLayout>
             </VerticalStackLayout>
         </ScrollView>
-        
-        
+
+
     </Grid>
 </ContentPage>

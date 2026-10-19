@@ -11,7 +11,8 @@
     Shell.TitleColor="White"
     Shell.TabBarBackgroundColor="{StaticResource Secondary}"
     Shell.TabBarForegroundColor="{StaticResource Primary}"
-    Shell.TabBarTitleColor="{StaticResource Primary}">
+    Shell.TabBarTitleColor="{StaticResource Primary}"
+    >
 
 
     <Shell.TitleView>
@@ -39,9 +40,9 @@
     <ShellContent Title="Home" Icon="house.png"
          ContentTemplate="{DataTemplate local:DashBoard}"
          Route="DashBoard" />
-    <ShellContent Title="Statistics" Icon="stats.png"
-                     
-         />
+    <ShellContent Title="Statistics" Icon="stats.png" 
+                  ContentTemplate="{DataTemplate local:StatisticsPage}"
+                  Route="StatisticsPage"/>
     <ShellContent Title="Goals" Icon="goals.png"
          />
     <ShellContent Title="Settings" Icon="settings.png"

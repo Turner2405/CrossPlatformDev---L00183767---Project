@@ -1,0 +1,438 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="HealthTrackApp.Pages.LogMeasurementPage"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    Title="Log Measurement">
+    <Shell.TitleView>
+        <Grid
+            Padding="10"
+            ColumnDefinitions="*,auto"
+            ColumnSpacing="10"
+            HorizontalOptions="Start"
+            RowDefinitions="auto,auto">
+
+            <Label
+                Grid.Column="0"
+                FontAttributes="Bold"
+                FontSize="24"
+                Text="Measurements"
+                TextColor="{StaticResource Secondary}"
+                VerticalOptions="Center" />
+        </Grid>
+    </Shell.TitleView>
+    <Grid RowDefinitions="*,Auto">
+
+        <ScrollView Grid.Row="0">
+            <VerticalStackLayout Padding="20" Spacing="20">
+
+                <VerticalStackLayout Spacing="4">
+                    <Label
+                        FontAttributes="Bold"
+                        FontSize="28"
+                        Text="My Activites"
+                        TextColor="{StaticResource PrimaryDark}" />
+
+                    <Label
+                        FontSize="14"
+                        Text="Tracking Progress,Day by Day"
+                        TextColor="{StaticResource Primary}" />
+                </VerticalStackLayout>
+
+                <HorizontalStackLayout HorizontalOptions="Center" Spacing="10">
+
+                    <Button
+                        Padding="14"
+                        BackgroundColor="#83E5BB"
+                        ContentLayout="Left,15"
+                        CornerRadius="14"
+                        FontAttributes="Bold"
+                        FontSize="20"
+                        HeightRequest="65"
+                        HorizontalOptions="Fill"
+                        ImageSource="plus.png"
+                        Text="Log Activity"
+                        TextColor="Green" />
+                </HorizontalStackLayout>
+                <Grid>
+                    <VerticalStackLayout Spacing="5">
+                        <Label
+                            FontAttributes="Bold"
+                            FontSize="20"
+                            Text="Previous Activties"
+                            TextColor="{StaticResource Primary}" />
+                        <Border
+                            Padding="0"
+                            BackgroundColor="White"
+                            Stroke="#DDEFEF"
+                            StrokeShape="RoundRectangle 18"
+                            StrokeThickness="1.5">
+
+                            <Grid ColumnDefinitions="6,*">
+
+
+                                <Border
+                                    Grid.Column="0"
+                                    BackgroundColor="{StaticResource Primary}"
+                                    StrokeShape="RoundRectangle 3"
+                                    StrokeThickness="0" />
+
+                                <!--  details  -->
+                                <Grid
+                                    Grid.Column="1"
+                                    Padding="14"
+                                    ColumnDefinitions="68,*,Auto"
+                                    ColumnSpacing="14"
+                                    VerticalOptions="Center">
+
+                                    <Border
+                                        Grid.Column="0"
+                                        BackgroundColor="#D2F0E9"
+                                        HeightRequest="64"
+                                        StrokeShape="RoundRectangle 32"
+                                        StrokeThickness="0"
+                                        VerticalOptions="Center"
+                                        WidthRequest="64">
+
+                                        <Image
+                                            HeightRequest="50"
+                                            Source="walk.png"
+                                            WidthRequest="40" />
+
+                                    </Border>
+
+                                    <!--  Activity information  -->
+                                    <VerticalStackLayout
+                                        Grid.Column="1"
+                                        Spacing="6"
+                                        VerticalOptions="Center">
+
+                                        <Label
+                                            FontAttributes="Bold"
+                                            FontSize="17"
+                                            Text="Morning Walk"
+                                            TextColor="#075456" />
+
+                                        <Label
+                                            FontSize="14"
+                                            Text="Walk | 30 minutes | 350 kcal"
+                                            TextColor="#68858B" />
+
+                                    </VerticalStackLayout>
+
+                                    <!--  View details date  -->
+                                    <Label
+                                        Grid.Column="2"
+                                        FontAttributes="Bold"
+                                        FontSize="10"
+                                        HorizontalOptions="Center"
+                                        Text="19/10/2026"
+                                        TextColor="#68858B"
+                                        VerticalOptions="Center" />
+                                </Grid>
+                            </Grid>
+                        </Border>
+                        <Border
+                            Padding="0"
+                            BackgroundColor="White"
+                            Stroke="#DDEFEF"
+                            StrokeShape="RoundRectangle 18"
+                            StrokeThickness="1.5">
+
+                            <Grid ColumnDefinitions="6,*">
+
+
+                                <Border
+                                    Grid.Column="0"
+                                    BackgroundColor="{StaticResource Tertiary}"
+                                    StrokeShape="RoundRectangle 3"
+                                    StrokeThickness="0" />
+
+                                <!--  details  -->
+                                <Grid
+                                    Grid.Column="1"
+                                    Padding="14"
+                                    ColumnDefinitions="68,*,Auto"
+                                    ColumnSpacing="14"
+                                    VerticalOptions="Center">
+
+                                    <Border
+                                        Grid.Column="0"
+                                        BackgroundColor="#D2F0E9"
+                                        HeightRequest="64"
+                                        StrokeShape="RoundRectangle 32"
+                                        StrokeThickness="0"
+                                        VerticalOptions="Center"
+                                        WidthRequest="64">
+
+                                        <Image
+                                            HeightRequest="50"
+                                            Source="bjj.png"
+                                            WidthRequest="40" />
+
+                                    </Border>
+
+                                    <!--  Activity information  -->
+                                    <VerticalStackLayout
+                                        Grid.Column="1"
+                                        Spacing="6"
+                                        VerticalOptions="Center">
+
+                                        <Label
+                                            FontAttributes="Bold"
+                                            FontSize="17"
+                                            Text="BJJ Training"
+                                            TextColor="#075456" />
+
+                                        <Label
+                                            FontSize="14"
+                                            Text="BJJ | 1 hr 30 minutes | 800 kcal"
+                                            TextColor="#68858B" />
+
+                                    </VerticalStackLayout>
+
+                                    <!--  View details date  -->
+                                    <Label
+                                        Grid.Column="2"
+                                        FontAttributes="Bold"
+                                        FontSize="10"
+                                        HorizontalOptions="Center"
+                                        Text="18/10/2026"
+                                        TextColor="#68858B"
+                                        VerticalOptions="Center" />
+                                </Grid>
+                            </Grid>
+                        </Border>
+                        <Border
+                            Padding="0"
+                            BackgroundColor="White"
+                            Stroke="#DDEFEF"
+                            StrokeShape="RoundRectangle 18"
+                            StrokeThickness="1.5">
+
+                            <Grid ColumnDefinitions="6,*">
+
+
+                                <Border
+                                    Grid.Column="0"
+                                    BackgroundColor="{StaticResource Primary}"
+                                    StrokeShape="RoundRectangle 3"
+                                    StrokeThickness="0" />
+
+                                <!--  details  -->
+                                <Grid
+                                    Grid.Column="1"
+                                    Padding="14"
+                                    ColumnDefinitions="68,*,Auto"
+                                    ColumnSpacing="14"
+                                    VerticalOptions="Center">
+
+                                    <Border
+                                        Grid.Column="0"
+                                        BackgroundColor="#D2F0E9"
+                                        HeightRequest="64"
+                                        StrokeShape="RoundRectangle 32"
+                                        StrokeThickness="0"
+                                        VerticalOptions="Center"
+                                        WidthRequest="64">
+
+                                        <Image
+                                            HeightRequest="50"
+                                            Source="run.png"
+                                            WidthRequest="40" />
+
+                                    </Border>
+
+                                    <!--  Activity information  -->
+                                    <VerticalStackLayout
+                                        Grid.Column="1"
+                                        Spacing="6"
+                                        VerticalOptions="Center">
+
+                                        <Label
+                                            FontAttributes="Bold"
+                                            FontSize="17"
+                                            Text="Evening Run"
+                                            TextColor="#075456" />
+
+                                        <Label
+                                            FontSize="14"
+                                            Text="Run | 30 minutes | 400 kcal"
+                                            TextColor="#68858B" />
+
+                                    </VerticalStackLayout>
+
+                                    <!--  View details date  -->
+                                    <Label
+                                        Grid.Column="2"
+                                        FontAttributes="Bold"
+                                        FontSize="10"
+                                        HorizontalOptions="Center"
+                                        Text="17/10/2026"
+                                        TextColor="#68858B"
+                                        VerticalOptions="Center" />
+                                </Grid>
+                            </Grid>
+                        </Border>
+                        <Border
+                            Padding="0"
+                            BackgroundColor="White"
+                            Stroke="#DDEFEF"
+                            StrokeShape="RoundRectangle 18"
+                            StrokeThickness="1.5">
+
+                            <Grid ColumnDefinitions="6,*">
+
+
+                                <Border
+                                    Grid.Column="0"
+                                    BackgroundColor="{StaticResource Tertiary}"
+                                    StrokeShape="RoundRectangle 3"
+                                    StrokeThickness="0" />
+
+                                <!--  details  -->
+                                <Grid
+                                    Grid.Column="1"
+                                    Padding="14"
+                                    ColumnDefinitions="68,*,Auto"
+                                    ColumnSpacing="14"
+                                    VerticalOptions="Center">
+
+                                    <Border
+                                        Grid.Column="0"
+                                        BackgroundColor="#D2F0E9"
+                                        HeightRequest="64"
+                                        StrokeShape="RoundRectangle 32"
+                                        StrokeThickness="0"
+                                        VerticalOptions="Center"
+                                        WidthRequest="64">
+
+                                        <Image
+                                            HeightRequest="50"
+                                            Source="bjj.png"
+                                            WidthRequest="40" />
+
+                                    </Border>
+
+                                    <!--  Activity information  -->
+                                    <VerticalStackLayout
+                                        Grid.Column="1"
+                                        Spacing="6"
+                                        VerticalOptions="Center">
+
+                                        <Label
+                                            FontAttributes="Bold"
+                                            FontSize="17"
+                                            Text="BJJ Training"
+                                            TextColor="#075456" />
+
+                                        <Label
+                                            FontSize="14"
+                                            Text="BJJ | 1 hr | 500 kcal"
+                                            TextColor="#68858B" />
+
+                                    </VerticalStackLayout>
+
+                                    <!--  View details date  -->
+                                    <Label
+                                        Grid.Column="2"
+                                        FontAttributes="Bold"
+                                        FontSize="10"
+                                        HorizontalOptions="Center"
+                                        Text="17/10/2026"
+                                        TextColor="#68858B"
+                                        VerticalOptions="Center" />
+                                </Grid>
+                            </Grid>
+                        </Border>
+                        <Border
+                            Padding="0"
+                            BackgroundColor="White"
+                            Stroke="#DDEFEF"
+                            StrokeShape="RoundRectangle 18"
+                            StrokeThickness="1.5">
+
+                            <Grid ColumnDefinitions="6,*">
+
+
+                                <Border
+                                    Grid.Column="0"
+                                    BackgroundColor="{StaticResource Primary}"
+                                    StrokeShape="RoundRectangle 3"
+                                    StrokeThickness="0" />
+
+                                <!--  details  -->
+                                <Grid
+                                    Grid.Column="1"
+                                    Padding="14"
+                                    ColumnDefinitions="68,*,Auto"
+                                    ColumnSpacing="14"
+                                    VerticalOptions="Center">
+
+                                    <Border
+                                        Grid.Column="0"
+                                        BackgroundColor="#D2F0E9"
+                                        HeightRequest="64"
+                                        StrokeShape="RoundRectangle 32"
+                                        StrokeThickness="0"
+                                        VerticalOptions="Center"
+                                        WidthRequest="64">
+
+                                        <Image
+                                            HeightRequest="50"
+                                            Source="swim.png"
+                                            WidthRequest="40" />
+
+                                    </Border>
+
+                                    <!--  Activity information  -->
+                                    <VerticalStackLayout
+                                        Grid.Column="1"
+                                        Spacing="6"
+                                        VerticalOptions="Center">
+
+                                        <Label
+                                            FontAttributes="Bold"
+                                            FontSize="17"
+                                            Text="Swimming Session"
+                                            TextColor="#075456" />
+
+                                        <Label
+                                            FontSize="14"
+                                            Text="Swim | 1 hr 15 mins | 600 kcal"
+                                            TextColor="#68858B" />
+
+
+                                    </VerticalStackLayout>
+                                    <!--  View details date  -->
+                                    <Label
+                                        Grid.Column="2"
+                                        FontAttributes="Bold"
+                                        FontSize="10"
+                                        HorizontalOptions="Center"
+                                        Text="16/10/2026"
+                                        TextColor="#68858B"
+                                        VerticalOptions="Center" />
+                                </Grid>
+                            </Grid>
+                        </Border>
+
+
+                    </VerticalStackLayout>
+                </Grid>
+
+            </VerticalStackLayout>
+        </ScrollView>
+    </Grid>
+
+</ContentPage>
+
+
+
+
+
+
+
+
+
+

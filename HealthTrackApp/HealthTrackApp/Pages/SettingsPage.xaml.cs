@@ -7,8 +7,8 @@ public partial class SettingsPage : ContentPage
 		InitializeComponent();
 	}
 
-	private async void OnProfileClicked()
-	{
-		await Shell.Current.GoToAsync("ProfilePage");
+    public async void OnProfileClicked()
+    {
+        await Shell.Current.GoToAsync("ProfilePage");
     }
 }

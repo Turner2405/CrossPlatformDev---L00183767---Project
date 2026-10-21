@@ -318,7 +318,7 @@
                         <!--  Action block  -->
                         <Grid ColumnDefinitions="*,*,*" ColumnSpacing="12">
 
-                            <!--  Workout  -->
+                            <!--  activity  -->
                             <Border
                                 Grid.Column="0"
                                 Padding="10"
@@ -357,9 +357,10 @@
                                         Text="Activity"
                                         TextColor="#075B50" />
 
-                                    <Label
+                                    <Button
+                                        BackgroundColor="Transparent"
+                                        Clicked="OnActivityClicked"
                                         FontSize="28"
-                                        HorizontalTextAlignment="Center"
                                         Text="›"
                                         TextColor="#087F70" />
 
@@ -404,9 +405,10 @@
                                         Text="Measurement"
                                         TextColor="DarkBlue" />
 
-                                    <Label
+                                    <Button
+                                        BackgroundColor="Transparent"
+                                        Clicked="OnMeasurementClicked"
                                         FontSize="28"
-                                        HorizontalTextAlignment="Center"
                                         Text="›"
                                         TextColor="DarkBlue" />
 
@@ -451,9 +453,10 @@
                                         Text="Sleep"
                                         TextColor="MediumPurple" />
 
-                                    <Label
+                                    <Button
+                                        BackgroundColor="Transparent"
+                                        Clicked="OnSleepClicked"
                                         FontSize="28"
-                                        HorizontalTextAlignment="Center"
                                         Text="›"
                                         TextColor="#9165E8" />
 
@@ -478,8 +481,10 @@
                             TextColor="#075456"
                             VerticalOptions="Center" />
 
-                        <Label
+                        <Button
                             Grid.Column="1"
+                            BackgroundColor="Transparent"
+                            Clicked="OnActivityClicked"
                             FontSize="14"
                             Text="Activity log  ›"
                             TextColor="#159F9A"
@@ -547,12 +552,13 @@
 
                                 </VerticalStackLayout>
 
-                                <!--  View details arrow  -->
+                                <!--  View details date  -->
                                 <Label
                                     Grid.Column="2"
-                                    FontSize="32"
+                                    FontAttributes="Bold"
+                                    FontSize="10"
                                     HorizontalOptions="Center"
-                                    Text="›"
+                                    Text="19/10/2026"
                                     TextColor="#68858B"
                                     VerticalOptions="Center" />
 
@@ -618,12 +624,13 @@
 
                                 </VerticalStackLayout>
 
-                                <!--  View details arrow  -->
+                                <!--  View details date  -->
                                 <Label
                                     Grid.Column="2"
-                                    FontSize="32"
+                                    FontAttributes="Bold"
+                                    FontSize="10"
                                     HorizontalOptions="Center"
-                                    Text="›"
+                                    Text="18/10/2026"
                                     TextColor="#68858B"
                                     VerticalOptions="Center" />
 

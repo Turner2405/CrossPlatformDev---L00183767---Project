@@ -24,8 +24,14 @@
                 nameof(EditProfilePage),
                 typeof(EditProfilePage));
             Routing.RegisterRoute(
-                nameof(QuickActionsPage),
-                typeof(QuickActionsPage));
+                nameof(LogMeasurementPage),
+                typeof(LogMeasurementPage));
+            Routing.RegisterRoute(
+                nameof(LogSleepPage),
+                typeof(LogSleepPage));
+            Routing.RegisterRoute(
+                nameof(ActivitesPage),
+                typeof(ActivitesPage));
             Routing.RegisterRoute(
                 nameof(LoginPage),
                 typeof(LoginPage));
@@ -59,9 +65,9 @@
             await GoToAsync(nameof(SettingsPage));
         }
 
-        private async void OnQuickActionsClicked(object sender, EventArgs e)
+        private async void OnLogMeasurementClicked(object sender, EventArgs e)
         {
-            await GoToAsync(nameof(QuickActionsPage));
+            await GoToAsync(nameof(LogMeasurementPage));
         }
 
         private async void OnLoginClicked(object sender, EventArgs e)
